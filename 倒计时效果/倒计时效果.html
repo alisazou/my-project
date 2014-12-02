@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript" src='jquery-1.11.1.min.js'></script>
+	<script type="text/javascript">
+	$(function(){
+            $('#timedown').on('click',function(){
+
+            	 setInterval(timedown,1000);
+            })
+            var num=60;
+            function timedown(){
+                  	 // console.log(i);
+                  	$('.z').text(num);
+                  	num--;
+                  	if(num==50){
+                  		alert('借宿');
+                  		
+                  	}
+            }
+
+             
+
+	})
+
+
+
+
+	</script>
+	<input type='button' id='timedown' value='确定'/>
+	<p class="z"></p>
+</body>
+</html>

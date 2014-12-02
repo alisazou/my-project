@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css" />
+
+</head>
+<body>
+    <div class="btn down"></div>
+    <!-- 标题 -->
+    <div class="navigation" id="js-nav">
+        <ul>
+            <li>
+                <a href="javascript:void(0);" class="cur">sec</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" >sec</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">sec</a>
+            </li>
+             <li>
+                <a href="javascript:void(0);">sec</a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- 内容 -->
+    <div class="section section-1">
+        <div class="demo1"></div>
+    </div>
+    <!-- 内容 -->
+    <div class="section section-2">
+        <div class="demo2"></div>
+    </div>
+    <!-- 内容 -->
+    <div class="section section-3">
+        <div class="demo3"></div>
+    </div>
+        <div class="section section-4">
+        <div class="demo4"></div>
+    </div>
+</body>
+</html>
+    <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
+
+    <script type="text/javascript">
+
+//**滚动开始**
+(function(){
+    var ww = $(document.body).width();
+   
+    var nColLen = $(".section").length, 
+        aCol = $(".section"),
+        aColPos = [];
+        nAvailH=$(window).height(); //可视区域高
+        nIndex = 0;
+        nTime=600;
+        nfastTime=100;
+    var nCurPos, sNextColPos;
+    for(var i=0;i<nColLen;i++){ 
+        aColPos[i] = $( aCol ).eq(i).offset().top; //获取所有栏目的垂直位置
+    }
+    var tmp=1;
+    function showBackTop(){ 
+        $(".btn").one("click",function(){
+             if(tmp){
+                 tmp==1? $("html,body").animate({"scrollTop":0},nTime,function(){ $(".btn").removeClass("down").addClass("on"); }):$("html,body").animate({"scrollTop":0},nfastTime,function(){ $(".btn").removeClass("on").addClass("down"); });
+                 tmp=0;
+            }else{
+                 tmp==0?$("html,body").animate({"scrollTop":0},nTime,function(){ $(".btn").removeClass("on").addClass("down"); }):$("html,body").animate({"scrollTop":0},nfastTime,function(){ $(".btn").removeClass("down").addClass("on"); });
+                 tmp=1;
+            }        
+        })
+    }
+
+    function scrollAni(dir){
+          nCurPos = $(window).scrollTop();//距离顶部的滚动距离
+          for(var i=0;i<nColLen;i++){
+             if ( nCurPos < aColPos[i] ){//如果下个栏目的上边缘在浏览器上边缘的下方，则滚动至这个栏目
+                   // alert("当前位置" + nCurPos+ "  当前是第"+i+"个栏目，他距离顶部位置"+$( aCol ).eq(i).offset().top);
+                    if (dir<0) { sNextColPos = aColPos[i]; }
+                    else { sNextColPos = aColPos[i-1] }
+                    $("html,body").animate({"scrollTop":sNextColPos},nTime);
+                    break;
+             }
+             else if( nCurPos == aColPos[i] ) {
+                if (dir<0 ) { 
+                            sNextColPos = aColPos[i+1];
+                            if( i!=nColLen-1 ){ $("html,body").animate({"scrollTop":sNextColPos},nTime,function(){ //如果不是最后一个栏目
+                                if( i==nColLen-2 ) { showBackTop();  }  
+                            })
+                    } 
+                }
+                else {
+                        if( i!=0 ) { //如果不是第一个栏目
+                            sNextColPos = aColPos[i-1]; 
+                            $("html,body").animate({"scrollTop":sNextColPos},nTime,function(){
+                                // if( i==nColLen-1 ) { $(".jZtNext").removeClass("zt_next_back").unbind().bind("click", function(){ scrollAni(-1) }) }    
+                            }); 
+                        }
+                        
+                    }
+                    break;
+            }
+            if( nCurPos > aColPos[nColLen-1] && dir>0 )  { $("html,body").animate({"scrollTop":aColPos[nColLen-1]},nTime);  }
+
+        }
+    }
+    $(".down").bind("click",function(){
+         scrollAni(-1);
+    })
+
+
+    // $(".down").bind("click", function(){  //点击主链接时跳到相应栏目
+    //       for(var i=0;i<nColLen;i++){
+    //              $("html,body").animate({
+    //                     "scrollTop":aColh*nColLen(i+1)
+    //                     },nTime);
+    //             }    
+
+    //       })
+                                
+})()
+
+</script>

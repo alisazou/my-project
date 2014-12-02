@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	@charset "utf-8";
+
+body{margin: 0;padding: 0;}
+ul, ol, li, dl, dd { margin: 0; padding: 0; }
+ul, ol { list-style: none outside none; }
+
+.text-left{text-align: left;}
+.text-center{text-align:center}
+.text-right{text-align: right;}
+.fl{float:left;}
+.fr{float:right;}
+.clear{zoom:1;}
+.clear:after{content:'';clear:both;display:block;height:0;visibility:hidden;}
+	.box{border: 1px solid #ddd;text-align: center;margin-top: 20px;}
+	.box ul{display: inline-block;list-style: none;*display:inline;*zoom:1;padding: 0;margin: 0;vertical-align: top;}
+	.box ul li{float: left;width: 50px;padding: 10px 0;background: red;margin: 0 10px;font-size: 14px;height: 20px;line-height: 20px;}
+	.box2{border: 1px solid #ddd;text-align: center;margin-top: 20px;height: 20px;}
+	.box2 span{display: inline-block;}
+	.box2 span a{float: left;width: 50px;height: 20px;background: red;font-size: 14px;}
+ .box3{border: 1px solid #ddd;text-align: center;margin-top: 20px;}
+	.box3 ul{display: inline-block;list-style: none;*display:inline;*zoom:1;padding: 0;margin: 0;vertical-align: middle;}
+	.box3 ul li{float: left;width: 50px;padding: 10px 0;background: red;margin: 0 10px;font-size: 14px;height: 20px;line-height: 20px;}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="clearfix">
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+
+		</ul>
+
+	</div>
+	<div class="box2">
+		<span>
+			<a href="">1</a>
+			<a href="">1</a>
+			<a href="">1</a>
+			<a href="">1</a>
+		</span>
+	</div>
+
+<div class="box3">
+		<ul class="clearfix">
+			<li><div>e</div></li>
+			<li><div>w</div></li>
+			<li><div>s</div></li>
+			<li><div>c</div></li>
+			<li><div>5</div></li>
+
+		</ul>
+
+	</div>
+</body>
+</html>

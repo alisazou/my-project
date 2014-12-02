@@ -1,0 +1,122 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>VideoPlayer - Widgets - PPTV</title>
+    <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true">
+<link href="http://sr1.pplive.com/mcms/icon/images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<script type="text/javascript">var Qos={start:+new Date(),dataMap:{},mk:function(d,e){this.dataMap[d]=e||(+new Date()-this.start)},send:function(){}};</script>
+<script type="text/javascript" charset="utf-8">
+(function(a){var c;a:{try{if(a.external&&a.external.GetObject('@pplive.com/ui/mainwindow;1')){c=!0;break a}}catch(e){}c=!1}a.isClient=c;var d=a.plt=a.isClient?"clt":"web";a.mark={getDom:function(b){return b&&"string"==typeof b?document.getElementById(b):null},run:function(b){b=this.getDom(b);var a;b&&(a=b.getAttribute("data-plt")||"clt",b.style.display=a==d?"none":"")}}})(this);
+//seajs头部api
+(function(m,o,d,u,l,a,r){if(m[d])return;function f(n,t){return function(){r.push(n,arguments);return t}};m[d]=a={args:(r=[]),config:f(0,a),use:f(1,a)};m.define=f(2)})(window,document,'seajs');
+</script>
+<script src="http://static9.pplive.cn/cms/macrocms/pub/js/lib/v_20140623150216/lib.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+      videoPlayer.version = "v_20140611172059"; // 播放器JS版本号
+webcfg = {
+clids:{"8.pptv.com": 20000003,"kuanian.pptv.com":99990020,"chunwan.pptv.com":99990029},
+plugin:true
+};
+      webcfg.pbar_version = "1.5.9";//liaoliao版本号
+      commonModules.version = "v_20130425174027"; //通用模块的JS版本号（头部，尾部，评论等内容，会后加载）
+    $$.ipBlock.url_404 = "http://www.pptv.com/404/"; //IP屏蔽的跳转页面地址
+    window.blacklist = ['21c9b038e5b1b4868c40b7bd614ed33c','4a4a95da3b74066b94c94b29550bb7ef'];
+</script>
+    <script src="http://static1.pplive.cn/cms/macrocms/201109/iframePlayer/js/build/v_12/default.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8"> 
+    webcfg.plugin = false; // 不加载插件
+</script>
+<meta name="GENERATOR" content="Sihosoft MacroCMS 3.0">
+<script src="http://static9.pplive.cn/cms/macrocms/pub/js/videoplayer/v_20140611172059/videoPlayer.js" charset="utf-8" type="text/javascript"></script><script src="http://api2.v.pptv.com/api/openapi/channel.js?id=300147&amp;playlink=1&amp;upd_con=1&amp;version=0&amp;episode=9999&amp;cb=videoPlayerLoadCallback" charset="utf-8" type="text/javascript"></script><script charset="utf-8" async="" src="http://static9.pplive.cn/pub/jquery/v_20130812110929/jquery.js"></script><script charset="utf-8" async="" src="http://static9.pplive.cn/pub/delayload/v_20130627170851/delayload.js"></script><script charset="utf-8" async="" src="http://static9.pplive.cn/pc_client/v_20131010140851/clt.js"></script><script charset="utf-8" async="" src="http://static9.pplive.cn/pub/user/v_20140610185834/user.js"></script><script charset="utf-8" async="" src="http://static9.pplive.cn/pub/cookie/v_20121102122826/cookie.js"></script><script src="http://player.aplus.pptv.com/jsplayer/pid/11401.js" charset="utf-8" type="text/javascript"></script></head>
+<body style="margin: 0; background: #000;"><div style="height: 0px; overflow: hidden;"></div><div style="height: 0px; overflow: hidden;"></div>
+    <div id="playbox" style="margin: 0px auto; overflow: hidden; width: 640px; height: 520px; background: rgb(0, 0, 0);"><object data="http://player.pplive.cn/live/2.8.8/player4live2.swf" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="100%" height="100%" id="PPTV_PLAYER1409636171778" align="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="movie" value="http://player.pplive.cn/live/2.8.8/player4live2.swf"><param name="quality" value="high"><param name="wmode" value="direct"><param name="bgcolor" value="#000000"><param name="flashvars" value="pid=11401&amp;api=EVENT_HOST_1409636171779"><embed src="http://player.pplive.cn/live/2.8.8/player4live2.swf" flashvars="pid=11401&amp;api=EVENT_HOST_1409636171779" wmode="direct" backgroundcolor="#000000" quality="high" width="100%" height="100%" name="PPTV_PLAYER1409636171778" align="middle" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></object></div>
+    <script type="text/javascript">
+        createPlayer();
+    </script>
+
+
+<!--w2c_replace_script-->
+<!--web_tongji_start-->
+<!--全站两端通用底部JS碎片seajs碎片-->
+<script type="text/javascript">
+seajs.use(['delayload','client'],function(delay,client){
+  delay.init();
+  if(window.plt && plt == 'clt'){ client.ex.initLinks(); }
+}); 
+//seajs配置和加载
+if (window.seajs) {
+    seajs.config({
+        base: "http://static9.pplive.cn/pub/",
+        modules: [
+           ['seajs', 'v_20140508120050'],
+            ['jquery', 'v_20130812110929'],
+            ['json', 'v_20120830104551'],
+            ['cookie', 'v_20121102122826'],
+            ['user', 'v_20140610185834'],
+            ['puid', 'v_20120813152810'],
+            ['sctx', 'v_20130807180208'],
+            ['pctx', 'v_20120919172616'],
+            ['suggest', 'v_20140520165925'],
+            ['popbox', 'v_20140529103712'],
+            ['log', 'v_20140508173915'],
+            ['history', 'v_20140429111808'],
+            ['scoremark', 'v_20140320171446'],
+            ['remind', 'v_20130330061622'],
+            ['login', 'v_20140213142716'],
+            ['reward', 'v_20130216114015'],
+            ['md5', 'v_20130118144206'],
+            ['underscore', 'v_20130222153732'],
+            ['episode', 'v_20131203171416'],
+            ['pbar', 'v_20130718162746'],
+            ['photoslide', 'v_20140815175637'],
+            ['tabview', 'v_20130731111028'],
+            ['delayload', 'v_20130627170851'],
+            ['programlist', 'v_20140528172125'],
+            ['loader', 'v_20140428214113'],
+            ['liaoliao', 'v_20140612162752'],
+            //jui - 逐渐废弃
+            ['jquery-slider', 'v_20121217190813'],
+            ['jui-base', 'v_20121023191226'],
+            ['jui-playnav', 'v_20121026130312'],
+            ['jui-minnav', 'v_20121026130312'],
+            ['jui-minnav_single', 'v_20130114124219'],
+            ['jui-popbox', 'v_20120820094705'],
+            ['renderdiv', 'v_20121213103512'],
+            ['juicer', 'v_20130128194959'],
+            ['jqueryui-core', 'v_20120912171856'],
+            ['jquery-tabs', 'v_20120821120003'],
+            ['jquery-slider', 'v_20121217190813'],
+            //mobile
+            ['mobile', 'v_20140815183512'],
+            //other
+            ['seriesList', 'v_20140426194201'],
+            ['oth', 'v_20120919172353']
+        ],
+
+        alias: {
+            'playheader' : 'http://static9.pplive.cn/pptv/pub/v_20131011999999/js/playheader.js',
+            'header': 'http://static9.pplive.cn/pptv/pub/v_20140703145257/js/header.js',
+            'headerForPlay': 'http://static9.pplive.cn/pptv/pub/v_20140703161005/js/header_v.js',
+            'client': 'http://static9.pplive.cn/pc_client/v_20131010140851/clt.js',
+            'playerapp': 'http://static9.pplive.cn/pptv/page/playerapp/v_20140624135002/playerapp.js'
+        }
+    });
+}
+
+(function(b,c,h,g){if(!b[g]&&b[c]&&b[c].args)for(var e=b[c].args;0<e.length;){for(var d=0;d<e.length;d+=2)if(0==e[d]){var a=e[d+1][0];if(a&&a.modules)for(var f=0;f<a.modules.length;f++)if(a.modules[f][0]==c){b[g]=!0;document.write('<script src="'+a.base+c+"/"+a.modules[f][1]+"/"+h+'" type="text/javascript"><\/script>');return}}break}})(this,"seajs","sea.js","_ldr_initialized");
+</script><script src="http://static9.pplive.cn/pub/seajs/v_20140508120050/sea.js" type="text/javascript"></script>
+<!--以下为网站端统计代码组合-->
+<!--baidu_tongji-->
+<!-- pptv.com Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+try{navigator.javaEnabled = function(){return true;};}catch(e){}
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7adaa440f53512a144c13de93f4c22db' type='text/javascript'%3E%3C/script%3E"));
+</script><script src=" http://hm.baidu.com/h.js?7adaa440f53512a144c13de93f4c22db" type="text/javascript"></script>
+<!--web_tongji_end-->
+
+
+<!--
+用法demo：
+http://pub.pptv.com/player/iframe/index.html#id=（点播、直播、合集）视频ID&w=高&h=宽&ctx=
+--><div style="visibility: hidden; position: fixed; z-index: 100; bottom: 20px; width: 250px; height: 230px; right: 20px;"><div class="minibar" style="display:none;height:30px;background:#333;clear:both; overflow:hidden"><span class="btn_closeminiplayer" style="float:right; width:30px; height:30px; cursor:pointer; background:#333; line-height:30px; color:#ccc">关闭</span></div><div id="miniVodPlayer" style="height:200px"></div></div></body></html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>幻灯特效</title>
+	<style type="text/css">
+	.text{height: 1px;width: 200px;background: red;overflow: hidden;}
+  #test{zoom:1;overflow:hidden;border:1px solid #ddd;background:#eee;}
+#test h1{float:left;}
+#test .nav{float:right;background:#aaa;}
+#test .nav ul{zoom:1;overflow:hidden;margin:0;padding:0;list-style:none;float: left;}
+#test .nav li{float:left;margin:0 5px;}
+.div{color:#f00!important;}
+.div{color:#000;}
+p:nth-child(2){color:#f00;}
+.title{font-size:20px;}
+.content{font-size:13px;}
+.content.note{font-size:30px;}
+.main{width: 200px;}
+.left{float: left;}
+.right{float: right;}
+	</style>
+</head>
+<body>
+	<div id="test">
+	<h1>Doyoe</h1>
+	<div class="nav">
+		<ul>
+			<li><a href="http://css.doyoe.com/">CSS参考手册</a></li>
+			<li><a href="http://blog.doyoe.com/">CSS探索之旅</a></li>
+			<li><a href="http://demo.doyoe.com/">web前端实验室</a></li>
+		</ul>
+	</div>
+</div>
+<h1 class="title">标题</h1>
+<p class="content">正文内容</p>
+<p class="content note">多类选择符的使用</p>
+<div class="main">
+	<div class="left">1</div>
+	<div class="right">2</div>
+</div>
+</body>
+
+
+</html>

@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>layer-更懂你的web弹窗解决方案</title>
+<script src="http://res.xiami.net/pc/lay/lib.js"></script>
+<script src="layer/layer.min.js"></script>
+
+<style>
+html{background-color:#E3E3E3; font-size:14px; color:#000; font-family:'微软雅黑'}
+a,a:hover{ text-decoration:none;}
+pre{font-family:'微软雅黑'}
+.box{padding:20px; background-color:#fff; margin:50px 100px; border-radius:5px;}
+.box a{padding-right:15px;}
+#about_hide{display:none}
+.layer_text{background-color:#fff; padding:20px;}
+.layer_text p{margin-bottom: 10px; text-indent: 2em; line-height: 23px;}
+.button{display:inline-block; *display:inline; *zoom:1; line-height:30px; padding:0 20px; background-color:#56B4DC; color:#fff; font-size:14px; border-radius:3px; cursor:pointer; font-weight:normal;}
+.imgs img{width:300px;}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2 style="padding-bottom:20px;">layer1.8相册模块，点击下述图片试试</h2>
+    <div id="imgs" class="imgs">
+        <img src="images/xb1.jpg" alt="layer宣传图">
+        <img src="images/xb2.jpg" alt="我入互联网这五年">
+        <img src="images/xb3.jpg" alt="微摄影">
+        <img src="images/xb4.jpg" alt="三清山">
+    </div>
+</div>
+
+
+
+<script>
+;!function(){
+
+layer.use('extend/layer.ext.js', function(){
+    //初始加载即调用，所以需放在ext回调里
+    layer.ext = function(){
+        layer.photosPage({
+            //title: '快捷模式-获取页面元素包含的所有图片',
+           // id: 112, //相册id，可选
+            parent: '#imgs'
+        });
+    };
+});
+
+// $('#suggest').on('click',function(event){
+// 	var height = $(window).height(), index = $.layer({
+// 		type : 2,
+// 		shade : [0.5 , '#000' , true],
+// 		shadeClose : true,
+// 		border : [!0],
+// 		title : false,
+// 		offset : ['25px',''],
+// 		area : ['90%', (height - 50)+'px'],
+// 		iframe : {src : $(this).attr('href')}
+// 	});
+//     event.preventDefault();
+// });
+
+}();
+</script>
+</body>
+</html>

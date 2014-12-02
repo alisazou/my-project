@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>pregressbar03</title>
+</head>
+
+<body>
+      <style type="text/css">
+            #progress {            
+            height: 20px;             
+            border: 1px solid blue;
+            background: #CCCCCC;            
+            }
+           #bar_span{
+            display:block;
+             width: 0%;
+             height:20px;
+             background: green;            
+             }
+        </style>
+
+        <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+        <script type="text/javascript">  
+            function SetProgress(ress) {
+                if (ress){
+                    $("#bar_span").css("width", String(ress) + "%");              
+                }
+            }
+            var i = 0;
+            function doProgress() {
+                if (i <= 100) {
+                    setTimeout("doProgress()", 100);
+                    SetProgress(i);
+                    i++;
+                }
+            }
+
+            $(document).ready(function() {   
+                doProgress();
+            });
+        </script>
+
+     <h1>Javascript 进度条 Demo</h1>
+    <p>原理就是使用 Javascript 控制 SPAN CSS 的宽度（以及其他的样式）</p>
+    <div id="progress"><span  id="bar_span"> </span></div>
+</body>
+</html>
+ 

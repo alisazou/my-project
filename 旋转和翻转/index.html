@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+  img{border: none}
+	.box{width: 200px;height: 200px;margin-top: 10px;}
+	.box1{width: 200px;height: 200px;margin-top: 10px;
+		filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+	    -moz-transform: rotate(90deg) translateZ(0);
+	   -o-transform: rotate(90deg) translateZ(0);
+	   -webkit-transform: rotate(90deg) translateZ(0);
+	   transform: rotate(90deg) translateZ(0);
+	 
+	}
+	
+	/*水平翻转*/
+  .box2 {
+        -webkit-transform: scaleX(-1);
+        -moz-transform: scaleX(-1);
+        -ms-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH();
+    }
+    /*垂直翻转*/
+.box3{
+  -webkit-transform: scaleY(1);
+  -moz-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  -o-transform: scaleY(1);
+  transform: scaleY(1);
+  filter: FlipV();
+}
+.box4{width: 200px;height: 200px;margin-top: 10px;
+		filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	    -moz-transform: rotate(180deg) translateZ(0);
+	   -o-transform: rotate(180deg) translateZ(0);
+	   -webkit-transform: rotate(180deg) translateZ(0);
+	   transform: rotate(180deg) translateZ(0);
+	 
+	}
+.box5{width: 200px;height: 200px;margin-top: 10px;
+	
+	 
+	}
+.box6 img{margin-top: 10px;
+		filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	    -moz-transform: rotate(180deg) translateZ(0);
+	   -o-transform: rotate(180deg) translateZ(0);
+	   -webkit-transform: rotate(180deg) translateZ(0);
+	   transform: rotate(180deg) translateZ(0);
+
+    box-shadow:0 0 1px rgba(0,0,0, 0);
+	 
+	}
+#page_title {
+overflow: visible;
+position: absolute;
+width: 38px;
+/*filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
+-moz-transform: rotate(90deg);
+-moz-rotation-point: 0 0;
+-webkit-transform: rotate(90deg);
+-webkit-rotation-point: 0 0;
+-o-transform: rotate(90deg);
+-ms-writing-mode: tb-lr;
+* html writing-mode: tb-lr;
+}
+
+#page_title h1 {
+display: block;
+font-size: 70px;
+font-weight: normal;
+line-height: 38px;
+color: #F3C1E0;
+font-variant: small-caps;
+width: auto;
+}
+.anim_image {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    cursor:pointer;
+}
+.box7{width: 100px;height: 100px;background: red;position: absolute;left: 500px;}
+ .box7:hover{
+ 	  -webkit-transform:translate(100px);
+    -moz-transform:translate(100px);
+ 	 -webkit-transform: scale(0, 0);
+    -webkit-transform-origin: bottom left;
+ }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="1.png"></div>
+	<div class="box1">
+		<img src="1.png"></div>
+	<div class="box2">
+		<img src="1.png"></div>
+	<div class="box3">
+		<img src="1.png"></div>
+	<div class="box4">
+		<img src="1.png"></div>
+	<div class="box5">
+		
+           <img src="2.png">
+	</div>
+	<div class="box6">
+		
+           <img src="2.png">
+	</div>
+<div id="page_title">
+	<img src="2.png">
+<h1>Inwardpath&nbsp;Publishers</h1>
+</div>
+<DIV ID="oFilterDIV" STYLE="position:absolute; top:50px; left:10px; width:240px; height:160px;
+padding:10px;  background:url(black.png);
+filter:progid:DXImageTransform.Microsoft.BasicImage(
+grayscale=0, xray=0, mirror=0, invert=0, opacity=1, rotation=1)"><img src="2.png">
+</DIV>
+<div class="box7 anim_image">
+
+</div>
+</body>
+</html>

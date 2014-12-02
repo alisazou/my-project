@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>+1</title>
+<style type="text/css">
+ *{margin: 0;padding: 0;}
+    .box{position: relative;overflow: hidden;width: 200px;height:100px;border: 1px solid red;margin: 10px auto}
+    .box .left{position: absolute;left: 0;top:50%;margin-top: -5px;width: 10px;height: 10px;background: blue}
+    .box .right{position: absolute;right: 0;top:50%;margin-top: -5px;width: 10px;height: 10px;background: blue}
+    .list{list-style: none;width: 2000px;height: 100px}
+    .list li{width: 100px;height: 100px;float: left;border: 1px solid blue;text-align: center;line-height: 100px;}
+    .yuan{width: 200px;margin: 30px auto;height: 100px}
+    .yuan span{display: inline-block;width: 20px;height: 20px;border-radius: 100%;background: #ddd}
+    .yuan span.active{background: red}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+   <a href="javascript:;" class="left"></a>
+   <a href="javascript:;" class="right"></a>
+   <ul class="list">
+       <li>1</li>
+       <li>2</li>
+       <li>3</li>
+       <li>4</li>
+   </ul>
+</div>
+   <div class="yuan">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+   </div>
+
+
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var aliLen = $('.list').children().length,
+            aliFist = $('.list').children().eq(0),
+            dir  =0;
+            aliWid = $('.list').children().eq(0).width();
+        // console.log(aliWid);
+        function donghua(num){
+             $('.list').animate({
+                'marginLeft':aliWid*(-num)
+             },600)
+             // console.log(num);
+        }
+          //小圆
+          function getYuan(num){
+             $('.yuan span').eq(num).addClass('active').siblings().removeClass('active');
+             console.log("a");
+          }
+        function getPosition(dir){
+                 (dir=='left')?dir+1:dir-1;
+        }
+        $('.box a').on('click',function(){
+              dir = ($(this).attr('class')=='right')?dir+1:dir-1;
+              if(dir==(aliLen-1)){
+                 $('.right').hide();
+                 $('.left').show();
+             }
+              if(dir==0){
+                 $('.left').hide();
+                 $('.right').show();
+              }
+              donghua(dir);
+              getYuan(dir);
+        })
+    })
+
+
+
+</script>
+
+</body>
+</html>

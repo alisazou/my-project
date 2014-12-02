@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试ie6下position的bug</title>
+	<style type="text/css">
+	body{ font-size: 14px; margin:0; }
+  /**{ -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }*/
+    .box{ border:1px solid red; position: relative; height: 100px}
+    .left{ position: absolute; width: 100px; height: 100px; background: red; line-height: 80px; text-align: center; padding: 10px; }
+    ul{ list-style: none; border: 1px solid red; padding: 0; margin: 0}
+    ul li{ border: 1px solid blue}
+    .box2{ width: 400px; height: 100px; background: blue; padding: 10px; margin:30px!important; margin:28px; }
+    .box2{ }
+    .space{font-size: 0;  -webkit-text-size-adjust:none;}
+    .space a { display: inline-block; padding: .5em 1em; background-color: #cad5eb;font-size: 10px; }
+	</style>
+</head>
+<body>
+	<!-- <div class="box">
+		 <div class="left">测试</div>
+		
+	</div>
+	<ul>
+		<li>测试</li>
+		<li>测试</li>
+		<li>测试</li>
+		<li>测试</li>
+	</ul>
+	<div class="box2">测试</div> -->
+	<input type="text"><input type="submit" value="提交按钮">
+	<div class="space">
+  <a href="##">
+  惆怅</a><a href="##">
+  淡定</a><a href="##">
+  热血</a>
+</div>	
+</body>
+</html>

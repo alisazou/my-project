@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<input type="text" value='链接地址'  class="jInp">
+	<input type="text" value='链接地址'  class="jInp">
+</body>
+<script type="text/javascript" src='jquery-1.11.1.min.js'></script>
+<script type="text/javascript">
+	jQuery.fn.extend({
+	//input聚焦时的文字提示
+	toggleTip:function(){
+		// sOnClass = opt.onClass;
+		// var sIntTip = $(this).attr("tip");
+		$(this).bind("focus, click",function(){
+			// alert($(this).val().length);
+			// console.log(sIntTip.length)
+		{ $(this).val("");  }
+		})
+		$(this).bind("blur",function(){
+			if ( $(this).val() == "" ){ $(this).val('链接地址'); }
+		})
+	}
+})
+$(".jInp").toggleTip();
+</script>
+</html>

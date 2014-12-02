@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body,div,p{margin: 0;padding: 0;}
+.box{line-height:150px; border:1px dashed #cccccc; padding-left:5px;}
+.box span{display:-moz-inline-stack; display:inline-block; line-height:1.4em; vertical-align:middle;font-size: 14px;}
+.box i{width:0; display:-moz-inline-stack; display:inline-block; vertical-align:middle; font-size:0;}/*inline-block解决ie6下的bug,设置width：0解决ie8bug*/
+.box1,.box2,.box3{display: inline-block;background: red;*display:inline;zoom:1}
+.box1,.box2,.box3{display: inline;}/*在这里需注意：display:inline-block x需要定义在display：inline的前面*/
+.ib{width: 200px;height: 20px;background: red;display:-moz-inline-stack;display:inline-block}
+.out{display:inline-block; background:#a0b3d6; margin-top:20px;}
+.in1{display:block; height:20px;padding: 0 10px}/*在定高的情况下，ie6下，width：100%显示；*/
+.in2{display:block; line-height:20px;padding: 0 10px}
+
+
+</style>
+</head>
+<body>
+
+	<p class="box">
+		<span style="font-size:12px;">
+			这里是高度为150像素的标签内的多行文字，文字大小为12像素。
+			<br />
+			这里是第二行，用来测试多行的显示效果。
+		</span> <i>&nbsp;</i>
+	</p>
+
+	<div class="box1">
+		<span>T-L</span>
+		<span>T-C</span>
+		<span>T-R</span>
+	</div>
+	<div class="box2">
+		<span>M-L</span>
+		<span>M-C</span>
+		<span>M-R</span>
+	</div>
+	<div class="box3">
+		<span>B-L</span>
+		<span>B-C</span>
+		<span>B-R</span>
+	</div>
+	<span class="ib">B-L</span>
+	<span class="ib">B-C</span>
+	<span class="ib">B-R</span>
+	<br>
+	<span class="out">
+		<span class="in1">height:20px;btn</span>
+	</span>
+	<span class="out">
+		<span class="in2">line-height:20px;</span>
+	</span>
+</body>
+</html>

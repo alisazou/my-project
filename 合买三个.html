@@ -1,0 +1,80 @@
+<!DOCTYPE html xmlns:wb="http://open.weibo.com/wb">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		.numsel_l {
+		background-position: 0 0;
+		}
+		.numsel_l, .numsel_r {
+		cursor: pointer;
+		width: 23px;
+		border: 1px solid #B1B1B1;
+		background-color: #F9F9F9;
+		}
+		.numsel_l, .numsel_r, .numsel_m, .numsel_m input {
+		overflow: hidden;
+		float: left;
+		height: 22px;
+		}
+		.numsel_l, .numsel_r {
+		background-image: url(pic.png);
+		background-repeat: no-repeat;
+		}
+		.numsel_m {
+		width: 74px;
+		border-width: 1px 0;
+		border-color: #B1B1B1;
+		border-style: solid;
+		}
+		.numsel_m input {
+		width: 74px;
+		text-align: center;
+		line-height: 19px;
+		font-size: 14px;
+		border: 0;
+		}
+		.numsel_r {
+			background-position: -23px 0;
+			}
+			*:focus { outline: none; }
+			.jd_outer {
+position: relative;
+height: 12px;
+width: 105px;
+background-color: #edf5fa;
+display: inline-block;
+vertical-align: middle;
+}
+.jd_inner {
+position: absolute;
+left: 0;
+top: 0;
+height: 12px;
+background-color: #ed4835;
+display: inline-block;
+vertical-align: middle;
+}
+.zmm{width: 1253px;height: 771px;background:#575d52; }
+	</style>
+</head>
+<body>
+	<div class="numsel">
+		<span class="numsel_l"></span>
+		<span class="numsel_m">
+			<input id="money" type="text" value="4"></span>
+		<span class="numsel_r"></span>
+	</div>
+	<span class="jd_outer">
+		<span class="jd_inner" style="width:50%;"></span>
+	</span>
+
+	<wb:bulkfollow uids="1642909335,1782515283" type="1" width="378" count="6" color="C2D9F2,EEF7FC,0082CB,666666" titlebar="n" info="n" verified="n" sense="y" ></wb:bulkfollow>
+
+
+
+	<wb:publish action="pubilish" type="web" language="zh_cn" button_type="red" button_size="middle" refer="y" ></wb:publish>
+</body>
+</html>

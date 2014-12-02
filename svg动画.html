@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="description" content="SVG polygon points参数值变化与动画效果 » 张鑫旭-鑫空间-鑫生活" />
+<meta name="description" content="SVG polygon points参数值变化与动画效果" />
+<meta name="keywords" content="SVG, javascript, Snap.svg, polygon, points" />
+<meta name="author" content="张鑫旭, zhangxinxu" />
+<title>一个简单的SVG路径变化形成的动画效果</title>
+<style>
+html, body { margin: 0; height: 100%; background-color: #012E72; font-family: 'microsoft yahei'; overflow: hidden; }
+
+</style>
+</head>
+
+<body>
+<!-- <svg id="svg" width="200" height="100"></svg>
+            
+<input id="button" type="button" value="点击改变圈圈的顺序"> -->
+<!-- 
+<svg id="svg1" width="200" height="100"></svg>         
+<input id="button1" type="button" value="点击改变按钮颜色"> -->
+<svg id="svg" width="100" height="100"></svg>
+            
+<input id="button" type="button" value="点击颜色变变变">
+<script src="js/snap.svg-min.js"></script>
+<script>
+// var svg = Snap("#svg");
+// var c1 = svg.paper.circle(50, 50, 40).attr({
+//     fill: "#f00"	// 红色
+// });
+// var c2 = svg.paper.circle(100, 50, 40).attr({
+//     fill: "#00f"	// 蓝色
+// });
+
+// // 事件
+// document.querySelector("#button").addEventListener("click", function() {
+//     c2.after(c1);	
+// });
+
+
+
+var svg = Snap("#svg");
+var c = svg.paper.circle(50, 50, 40).attr({
+    fill: "#f00"	// 红色
+});
+
+// 事件
+document.querySelector("#button").addEventListener("click", function() {
+    var button = this;
+    c.animate({
+        fill: "#00f"	// 蓝色
+    }, 1500, mina.bounce, function() {
+        button.value = "变成蓝色妖姬了~";
+    });	
+});
+
+</script>
+</body>
+</html>

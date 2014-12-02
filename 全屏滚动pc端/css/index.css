@@ -1,0 +1,19 @@
+@charset "utf-8";
+	body,div,ul,ol,li,h1,h2,h3,h4,h5,h6,p { padding:0; margin:0}
+body,html { width:100%; height:100%}
+img,html,body { border:0}
+ul{ list-style: none; }
+.navigation{ position: fixed; z-index: 2000; top: 50%; right: 16px; margin-top: -40px;}
+.navigation li { position: relative; height: 26px; width: 26px; }
+
+.navigation a { display: block; width: 20px; height: 20px; text-indent: -9999px; background: url(../images/nav-c.png) no-repeat; }
+.navigation a.cur { background: url(../images/nav-o.png) no-repeat; }
+
+.section { height: 960px; position: relative; width: 100%; }
+.section-1{ background-color: #feda89; z-index: 10; }
+.section-2{ background-color: #de4f50; z-index: 15; }
+.section-3{ background-color: #904a68; z-index: 20; }
+.section-4{background-color: blue;z-index: 30}
+.down,.on{position: fixed;_position: absolute;width: 175px;height: 68px;left: 50%;bottom: 0;margin-left: -92px;z-index: 999;cursor: pointer;}
+.down{background: #FF3C00 url(../images/down.png) no-repeat center center}
+.on {background:#FF3C00 url(../images/up.png) no-repeat center center;}

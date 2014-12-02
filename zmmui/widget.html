@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件测试</title>
+	<link rel="stylesheet" type="text/css" href="common.css">
+	<link rel="stylesheet" type="text/css" href="global.css">
+	<style type="text/css">
+	.ui-grid-16 .ui-btn{width: 200px}
+	.w500{width: 800px}
+	
+
+	</style>
+</head>
+<body>
+	<!-- header -->
+	<div class="header-area">
+		<div class="title-area">
+			<h1>
+				<a href="../">Kuib</a>
+			</h1>
+			<p class="description">写样式的更好方式</p>
+			<img src="img/logo.jpg" alt="alice"></div>
+	</div>
+	<!-- end of header -->
+	<div class="nav-area">
+		<ol class="main-nav">
+			<li>
+				<a href="index.html">首页</a>
+			</li>
+			<li>
+				<a href="animate.html">动画</a>
+			</li>
+			<li>
+				<a href="widget.html">样式</a>
+			</li>
+			<li>
+				<a href="javascript.html">未完待续</a>
+			</li>
+			<li>
+				<a href="start.html">未完待续</a>
+			</li>
+			<li>
+				<a href="build.html">未完待续</a>
+			</li>
+			<li>
+				<a href="rule.html">未完待续</a>
+			</li>
+			<li>
+				<a href="tool.html">未完待续</a>
+			</li>
+		</ol>
+	</div>
+	<div class="main-area">
+		<div class="side-area">
+			<ul>
+
+				<li class="side-highlight">
+					<a href="#modules-box">
+						box <i class="iconfont" title="单箭头右">区块</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-button">
+						button <i class="iconfont" title="单箭头右">按钮</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-button-dropdown">
+						button-dropdown
+						<i class="iconfont" title="单箭头右">按钮菜单</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-form">
+						form
+						<i class="iconfont" title="单箭头右">表单</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-list">
+						list
+						<i class="iconfont" title="单箭头右">列表</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-nav">
+						nav
+						<i class="iconfont" title="单箭头右">导航</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-paging">
+						paging
+						<i class="iconfont" title="单箭头右">分页</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-poptip">
+						poptip
+						<i class="iconfont" title="单箭头右">气泡</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-tab">
+						tab
+						<i class="iconfont" title="单箭头右">标签页</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-table">
+						table
+						<i class="iconfont" title="单箭头右">提示框</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-tipbox">
+						tipbox
+						<i class="iconfont" title="单箭头右">表格</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-tiptext">
+						tiptext
+						<i class="iconfont" title="单箭头右">提示文本</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-select">
+						select
+						<i class="iconfont" title="单箭头右">下拉框</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-loading">
+						loading
+						<i class="iconfont" title="单箭头右">加载中</i>
+					</a>
+				</li>
+				<li>
+					<a href="#modules-step">
+						step
+						<i class="iconfont" title="单箭头右">步骤</i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="content-area">
+			<div class="alice-modules">
+				<div class="alice-module">
+					<div class="alice-module-head">
+						<h2 class="alice-module-title">
+							<a href="/box" id="modules-box">淡入淡出效果</a>
+						</h2>
+						<span class="alice-module-version">1.1.0</span>
+						<p class="alice-module-description">带边框和标题的标准区块。</p>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<div class="ui-box">
+								<div class="ui-box-head clearfix">
+									<h3 class="ui-box-head-title">区块标题</h3>
+									<span class="ui-box-head-text">其他文字</span>
+									<a href="#" class="ui-box-head-more">更多</a>
+								</div>
+								<div class="ui-box-container">
+									<div class="ui-box-content">ui-box-content 有默认内边距</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<div class="ui-box">
+								<div class="ui-box-head">
+									<h3 class="ui-box-head-title">没有内容</h3>
+									<span class="ui-box-head-text">其他文字</span>
+									<a href="#" class="ui-box-head-more">更多</a>
+								</div>
+								<div class="ui-box-container" style="display: none;">
+									<div class="ui-box-content">ui-box-content 有默认内边距</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<div class="ui-box">
+								<div class="ui-box-head">
+									<h3 class="ui-box-head-title">区块标题</h3>
+									<span class="ui-box-head-text">其他文字</span>
+									<a href="#" class="ui-box-head-more">更多</a>
+								</div>
+								<div class="ui-box-container">
+									<div class="ui-box-content">ui-box-content 有默认内边距</div>
+								</div>
+							</div>
+							<div class="ui-box ui-box-follow">
+								<div class="ui-box-head">
+									<h3 class="ui-box-head-title">连着上面的box</h3>
+									<span class="ui-box-head-text">其他文字</span>
+									<a href="#" class="ui-box-head-more">更多</a>
+								</div>
+								<div class="ui-box-container">
+									<div class="ui-box-content">ui-box-content 有默认内边距</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="alice-modules">
+				<div class="alice-module">
+					<div class="alice-module-head">
+						<h2 class="alice-module-title">
+							<a href="/box" id="modules-button">btn</a>
+						</h2>
+						<span class="alice-module-version">1.1.0</span>
+						<p class="alice-module-description">全站通用按钮组件，无图片纯 css 实现，IE8 以下无圆角。</p>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<a href="#" class="ui-btn ui-btn-lred">测试红色</a>
+							<a href="#" class="ui-btn ui-btn-mred">测试红色</a>
+							<a href="#" class="ui-btn ui-btn-sred">测试红色</a>
+						</div>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<input type="button" class="ui-btn ui-btn-lred" value="红色大按钮">
+							<input type="button" class="ui-btn ui-btn-mred" value="红色中按钮">
+							<input type="button" class="ui-btn ui-btn-sred" value="红色小按钮"></div>
+					</div>
+				</div>
+			</div>
+			<div class="alice-modules">
+				<div class="alice-module">
+					<div class="alice-module-head">
+						<h2 class="alice-module-title">
+							<a href="/box" id="modules-button">paging</a>
+						</h2>
+						<span class="alice-module-version">1.1.0</span>
+						<p class="alice-module-description">通用的分页组件，带有上下页和到达按钮。</p>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<div class="ui-paging">
+								<a href="#" class="ui-paging-prev">
+									<i class="iconfont" title="左三角形"></i>
+									上一页
+								</a>
+								<a href="#" class="ui-paging-item">1</a>
+								<a href="#" class="ui-paging-item ui-paging-current">2</a>
+								<a href="#" class="ui-paging-item">3</a>
+								<a href="#" class="ui-paging-item">4</a>
+								<a href="#" class="ui-paging-item">5</a>
+								<a href="#" class="ui-paging-item">6</a>
+								<a href="#" class="ui-paging-item">7</a>
+								<span class="ui-paging-ellipsis">...</span>
+								<a href="#" class="ui-paging-item">24</a>
+								<a href="#" class="ui-paging-next">
+									下一页
+									<i class="iconfont" title="右三角形"></i>
+								</a>
+								<span class="ui-paging-info">
+									<span class="ui-paging-bold">5/7</span>
+									页
+								</span>
+								<span class="ui-paging-which">
+									<input name="some_name" value="6" type="text"></span>
+								<a class="ui-paging-info ui-paging-goto" href="#">跳转</a>
+							</div>
+						</div>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<div class="ui-paging">
+								<span class="ui-paging-info">
+									第
+									<span class="ui-paging-bold">1/7</span>
+									页
+								</span>
+								<a class="ui-paging-prev">
+									<i class="iconfont" title="左三角形"></i>
+									上一页
+								</a>
+								<a href="#" class="ui-paging-next">
+									下一页
+									<i class="iconfont" title="右三角形"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="alice-modules">
+				<div class="alice-module">
+					<div class="alice-module-head">
+						<h2 class="alice-module-title">
+							<a href="/box" id="modules-form">form</a>
+						</h2>
+						<span class="alice-module-version">1.1.0</span>
+						<p class="alice-module-description">通用表单样式。可基于此表单样式构建各类功能表单。</p>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<form class="ui-form">
+								<fieldset>
+									<div class="ui-form-item">
+										<label for="" class="ui-label">
+											<span class="ui-form-required">*</span>
+											表单项文本
+										</label>
+										<input class="ui-input" type="text">
+										<span class="ui-form-other">
+											<a href="#">添加备注</a>
+										</span>
+										<p class="ui-form-explain">默认文案。</p>
+									</div>
+									<div class="ui-form-item">
+										<label for="" class="ui-label">表单项文本</label>
+										<input class="ui-input" type="text">
+										<span class="ui-form-other">
+											<a href="#">添加备注</a>
+										</span>
+										<p class="ui-form-explain ui-tiptext ui-tiptext-error">
+											<i class="ui-tiptext-icon iconfont" title="出错"></i>
+											此在DOM上保存属性值，请使用data-xxx的形式。
+										</p>
+									</div>
+									<div class="ui-form-item ui-form-item-error ui-form-item-focus">
+										<label for="" class="ui-label">表单项文本</label>
+										<input class="ui-input" type="text">
+										<span class="ui-form-other">
+											<a href="#">表单项其他</a>
+										</span>
+										<p class="ui-form-explain ui-tiptext ui-tiptext-error">
+											<i class="ui-tiptext-icon iconfont" title="出错"></i>
+											ui-form-item-focus 的效果。
+										</p>
+									</div>
+									<div class="ui-form-item">
+										<label for="" class="ui-label ui-label-reset">不可用input</label>
+										<input class="ui-input ui-input-disable" type="text" disabled="">
+										<p class="ui-form-explain">目前不可用</p>
+									</div>
+									<div class="ui-form-item">
+										<label for="" class="ui-label">验证码</label>
+										<input class="ui-input ui-input-checkcode" type="text" data-explain="请输入右图中字符，不区分大小写。" maxlength="4" autocomplete="off" value="" name="fourcode">
+										<img class="ui-checkcode-imgcode-img" align="absMiddle" alt="请输入您看到的内容" src="https://omeo.alipay.com/service/checkcode?sessionID=82012ab6b1f4ed9e675fb9092a25cb3b&amp;r=0.9321065918075809" title="点击刷新图片校验码">
+										<a href="#">看不清，换一张</a>
+										<div class="ui-form-explain">请输入右图中字符，不区分大小写。</div>
+									</div>
+									<div class="ui-form-item">
+										<label for="test">
+											<input class="ui-checkbox" id="test" value="" type="checkbox">我已阅读并接受自主缴费服务协议</label>
+									</div>
+									<div class="ui-form-item">
+										<input type="submit" class="ui-btn ui-btn-lred" value="确定">
+										<input type="button" class="ui-btn ui-btn-lred" value="取消"></div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="alice-modules">
+				<div class="alice-module">
+					<div class="alice-module-head">
+						<h2 class="alice-module-title">
+							<a href="/box" id="modules-button">poptip</a>
+						</h2>
+						<span class="alice-module-version">1.1.0</span>
+						<p class="alice-module-description">气泡提示组件样式，支持各个方向的箭头，带透明边框，黄白蓝三种色调。</p>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<div class="ui-poptip ">
+								<div class="ui-poptip-shadow">
+									<div class="ui-poptip-container">
+										<div class="ui-poptip-arrow ui-poptip-arrow-10"> <em></em>
+											<span></span>
+										</div>
+										<div class="ui-poptip-content">我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<div class="ui-poptip ">
+								<div class="ui-poptip-shadow">
+									<div class="ui-poptip-container">
+										<div class="ui-poptip-arrow ui-poptip-arrow-11"> <em></em>
+											<span></span>
+										</div>
+										<div class="ui-poptip-content">我是内容</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<div class="ui-poptip ">
+								<div class="ui-poptip-shadow">
+									<div class="ui-poptip-container">
+										<div class="ui-poptip-arrow ui-poptip-arrow-2">
+											<em></em>
+											<span></span>
+										</div>
+										<div class="ui-poptip-content">我是内容</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<div class="ui-poptip ">
+								<div class="ui-poptip-shadow">
+									<div class="ui-poptip-container">
+										<div class="ui-poptip-arrow ui-poptip-arrow-5">
+											<em></em>
+											<span></span>
+										</div>
+										<div class="ui-poptip-content">我是内容</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<div class="ui-poptip ">
+								<div class="ui-poptip-shadow">
+									<div class="ui-poptip-container">
+										<div class="ui-poptip-arrow ui-poptip-arrow-5">
+											<em></em>
+											<span></span>
+										</div>
+										<div class="ui-poptip-content">
+											<div style="position:relative;width:100px;height:100px ">
+												<span class="w-arrow2"></span>
+												<span class="w-arrow3"></span>
+
+											</div>
+											<div class="w-arrow1"></div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="alice-modules">
+				<div class="alice-module">
+					<div class="alice-module-head">
+						<h2 class="alice-module-title">
+							<a href="/box" id="modules-button">tab</a>
+						</h2>
+						<span class="alice-module-version">1.1.0</span>
+						<p class="alice-module-description">标签切换组件。建议和 arale.switchable 进行配合。</p>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<div class="ui-tab">
+								<ul class="ui-tab-items">
+									<li class="ui-tab-item">
+										<a href="javascript:;">全部交易</a>
+									</li>
+									<li class="ui-tab-item ui-tab-item-current">
+										<a href="javascript:;">进行中的交易</a>
+									</li>
+									<li class="ui-tab-item">
+										<a href="javascript:;">等待发货的交易</a>
+									</li>
+									<li class="ui-tab-item">
+										<a href="javascript:;">未确认收获的交易</a>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="alice-modules">
+				<div class="alice-module">
+					<div class="alice-module-head">
+						<h2 class="alice-module-title">
+							<a href="/box" id="modules-button">tipbox</a>
+						</h2>
+						<span class="alice-module-version">1.1.0</span>
+						<p class="alice-module-description">通用信息提示框样式，共有提示、成功、警告、等待等七种提示框。</p>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<div class="ui-tipbox ui-tipbox-message">
+								<div class="ui-tipbox-icon">
+									<i class="iconfont" title="提示"></i>
+								</div>
+								<div class="ui-tipbox-content">
+									<h3 class="ui-tipbox-title">提示标题</h3>
+									<p class="ui-tipbox-explain">完成的说明完成的说明。</p>
+									<p class="ui-tipbox-explain">
+										<a href="#">查询缴费记录</a>
+										|
+										<a href="#">我的支付宝</a>
+									</p>
+								</div>
+								<span class="ui-tip-amount">
+									<em>0.00</em>
+									元
+								</span>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="alice-modules">
+				<div class="alice-module">
+					<div class="alice-module-head">
+						<h2 class="alice-module-title">
+							<a href="/box" id="modules-button">table</a>
+						</h2>
+						<span class="alice-module-version">1.1.0</span>
+						<p class="alice-module-description">通用表格组件，可带表头表尾，用于显示各类数据。</p>
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<table class="ui-table ui-table-other">
+								<thead>
+									<tr>
+										<th rowspan="2">税后中奖金额</th>
+										<th>一个人参加</th>
+										<th colspan="2" class="no_bor">邀请朋友</th>
+									</tr>
+									<tr>
+										<th>6%加奖</th>
+										<th>单关固赔</th>
+										<th class="no_bor">2串1</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<span class="d tr">30000≤</span>
+											X
+											<span class="d tl">&lt;40000</span>
+										</td>
+										<td>1800</td>
+										<td>3000</td>
+										<td>3600</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="d tr">40000≤</span>
+											X
+											<span class="d tl">&lt;50000</span>
+										</td>
+										<td>2400</td>
+										<td>4000</td>
+										<td>4800</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="d tr">&nbsp;</span>
+											X
+											<span class="d tl">≥ 50000</span>
+										</td>
+										<td>3000</td>
+										<td>5000</td>
+										<td>6000</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+					<div class="alice-module-demo">
+						<div class="alice-module-dom">
+							<table class="ui-table">
+								<thead>
+									<tr>
+										<th width="10%">创建时间</th>
+										<th width="20%">名称</th>
+										<th width="20%">对方</th>
+										<th width="10%">金额</th>
+										<th width="10%">状态</th>
+										<th width="20%">操作</th>
+										<th width="10%">备注</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>data</td>
+										<td>Data</td>
+										<td>Data</td>
+										<td>Data</td>
+										<td>Data</td>
+										<td>Data</td>
+										<td>Data</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="alice-modules">
+					<div class="alice-module">
+						<div class="alice-module-head">
+							<h2 class="alice-module-title">
+								<a href="/box" id="modules-button">step</a>
+							</h2>
+							<span class="alice-module-version">1.1.0</span>
+							<p class="alice-module-description">通用步骤条，有标准和迷你两套样式。支持二到五步。</p>
+						</div>
+						<div class="alice-module-demo">
+							<div class="alice-module-dom">
+								<ul class="ui-step ui-step-3">
+									<li class="ui-step-start ui-step-done">
+										<div class="ui-step-line">-</div>
+										<div class="ui-step-icon">
+											<i class="iconfont"></i>
+											<i class="ui-step-number">1</i>
+											<span class="ui-step-text">第一步</span>
+										</div>
+									</li>
+									<li class="ui-step-active">
+										<div class="ui-step-line">-</div>
+										<div class="ui-step-icon">
+											<i class="iconfont"></i>
+											<i class="ui-step-number">2</i>
+											<span class="ui-step-text">第二步</span>
+										</div>
+									</li>
+									<li class="ui-step-end">
+										<div class="ui-step-line">-</div>
+										<div class="ui-step-icon">
+											<i class="iconfont"></i>
+											<i class="iconfont ui-step-number"></i>
+											<span class="ui-step-text">第三步</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="alice-modules">
+						<div class="alice-module">
+							<div class="alice-module-head">
+								<h2 class="alice-module-title">
+									<a href="/box" id="modules-button">tiptext</a>
+								</h2>
+								<span class="alice-module-version">1.1.0</span>
+								<p class="alice-module-description">带各类图标的提示文案，可带有提示箭头。</p>
+							</div>
+							<div class="alice-module-demo">
+								<div class="alice-module-dom">
+									<div class="ui-tiptext-container ui-tiptext-container-error">
+										<p class="ui-tiptext ui-tiptext-error">
+											<i class="ui-tiptext-icon" title="出错"></i>
+											<span class="ui-tiptext-txt">密码错误密码错误密码错误</span>
+										</p>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+</body>
+	</html>

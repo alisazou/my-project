@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	@charset "utf-8";
+
+body{margin: 0;padding: 0;}
+ul, ol, li, dl, dd { margin: 0; padding: 0; }
+ul, ol { list-style: none outside none; }
+
+.text-left{text-align: left;}
+.text-center{text-align:center}
+.text-right{text-align: right;}
+.fl{float:left;}
+.fr{float:right;}
+.clear{zoom:1;}
+.clear:after{content:'';clear:both;display:block;height:0;visibility:hidden;}
+	.box{border: 1px solid #ddd;text-align: center;margin-top: 20px;}
+	.box ul{display: inline-block;list-style: none;*display:inline;*zoom:1;padding: 0;margin: 0;height: 36px;background: blue}
+	.box ul li{float: left;width: 50px;padding: 10px 0;background: red;margin: 0 10px;font-size: 14px;}
+	.box2{border: 1px solid #ddd;text-align: center;margin-top: 20px;height: 20px;}
+	.box2 span{display: inline-block;}
+	.box2 span a{float: left;width: 50px;height: 20px;background: red;font-size: 14px;}
+    .box3{font-size: 14px;width: 300px;height: 50px;border: 1px solid red;} 
+    .box3 img{margin:10px 0 -10px 0;}
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="clearfix">
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+
+		</ul>
+		<p>你好</p>
+	</div>
+	<div class="box2">
+		<span>
+			<a href="">1</a>
+			<a href="">1</a>
+			<a href="">1</a>
+			<a href="">1</a>
+		</span>
+	</div>
+		<div class="box3">
+			<img src="help_icon.png" alt="">
+			<span>测试对齐</span>
+		</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tab选项卡</title>
+	<style type="text/css">
+     body,ul{margin-bottom: 0;padding: 0;}
+     .u-list{text-align: center;}
+     .u-list ul{display: inline-block;*display: inline;*zoom:1;list-style: none;border-bottom: 1px solid #ccc;}
+     .u-list ul li{float: left;width: 100px;text-align: center;height: 50px;line-height: 50px;background: #ddd;cursor: pointer;}
+     .u-list ul li.on{border-left: 1px solid #ccc;border-right: 1px solid #ccc;border-bottom: 0 none;background: #fff;}
+     .tab-main ul li{display: none}
+     .tab-main ul li.tab-layer{display: block;}
+	</style>
+</head>
+<body>
+	<div class="u-list">
+		<ul>
+			<li class="on">测试一</li>
+			<li>测试二</li>
+			<li>测试三</li>
+			<li>测试四</li>
+			<li>测试六</li>
+			<li>测试五</li>
+		</ul>
+	</div>
+	<div class="tab-main">
+		 <ul>
+		 	<li class="tab-layer">测试内容一</li>
+		 	<li>测试内容二</li>
+		 	<li>测试内容三</li>
+		 	<li>测试内容四</li>
+		 	<li>测试内容五</li>
+		 </ul>
+	</div>
+</body>
+<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var btn = $('.u-list ul').children(),
+		   tabMain = $('.tab-main ul').children();
+           btn.on('click',function(){
+                 var othis = $(this),
+                 index = othis.index();
+                 othis.addClass('on').siblings().removeClass('on');
+                 tabMain.eq(index).show().siblings().hide();
+
+        })
+	})
+
+// /切换事件
+// var btn = $('.tabtit').children(), main = $('.tab_main').children(), close = $('.tabclose');
+// btn.on('click', function(){
+//     var othis = $(this), index = othis.index();
+//     othis.addClass('tabnow').siblings().removeClass('tabnow');
+//     main.eq(index).show().siblings().hide();
+// });
+
+</script>
+</html>

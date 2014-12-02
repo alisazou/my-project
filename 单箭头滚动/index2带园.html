@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Slick jQuery Slidehow: Demo by http://sc.xueit.com</title>
+  <style type="text/css">
+  *{margin: 0;padding: 0;}
+      .silder{width: 215px;height: 145px;margin: 0 auto;padding: 0 20px;overflow: hidden;position: relative;}
+      .silder ul{overflow: hidden;list-style: none;}
+      .silder ul li{float: left;}
+     .control{position: absolute;display: block;width: 40px;height: 145px;cursor: pointer;text-indent: -9999px;}
+     .prev{left: 0;top: 0;background: url(img/control_left.jpg) no-repeat center center;}
+     .next{right: 0;top:0;background: url(img/control_right.jpg) no-repeat center center;}
+     .yuan{text-align: center;}
+     .yuan span{display: inline-block;width: 5px;height: 5px;border-radius: 100%;background: #ddd;}
+     .yuan span.active{background: red;}
+  </style>
+</head>
+<body>
+    <div class="silder">
+      <p class="yuan">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </p>
+       <ul>
+         <li><a href="#"><img src="img/img_slide_01.jpg"></a></li>
+         <li><a href="#"><img src="img/img_slide_02.jpg"></a></li>
+         <li><a href="#"><img src="img/img_slide_03.jpg"></a></li>
+         <li><a href="#"><img src="img/img_slide_04.jpg"></a></li>
+       </ul> 
+       <div class="nav">
+         <span class="control prev" data-direction="prev">左按钮</span>
+         <span class="control next" data-direction="next">右按钮</span>
+         </div>
+    </div>
+</body>
+<script type="text/javascript" src="jquery-1.4.2.js"></script>
+<script type="text/javascript">
+  var aDot=[];
+  function Slider(container,nav){
+      this.container = container;
+      this.imgs = this.container.find('img');
+      this.spans = this.container.prev().find('span');
+    
+      this.imgWidth = this.imgs[0].width;
+      this.imgsLen = this.imgs.length;
+      this.current = 0;
+  }
+
+  Slider.prototype.transition = function(){
+      if($(this.container).not(":animated")) { //如果没有动画效果
+       this.container.animate({
+        'margin-left':(this.imgWidth*this.current)
+       },600)
+    }
+    this.spans.eq(this.current).addClass("active").siblings().removeClass("active");
+    console.log(this.current);
+  }
+// Slider.prototype.setYuan = function(){
+//     this.spans.eq(this.current).addClass("active").siblings().removeClass("active");
+//       console.log(this);
+// }
+Slider.prototype.setCurrent = function( dir ) {
+  var pos = this.current;
+  pos += ( ~~( dir === 'prev' ) || -1 ); 
+   this.current = ( pos < 0 ) ? pos % this.imgsLen :  this.imgsLen - 1;
+  return pos;
+};
+
+  
+$(function(){
+
+  var container = $('.silder').children('ul'),
+      imglen = container.find('li').length,
+      imgWidth = container.find('img')[0].width;
+      container.width((imglen*imgWidth)+'px');
+    slider = new Slider( container, $('.nav'));
+    $('.control').bind('click',function(){
+       slider.setCurrent( $(this).data('direction'));
+       slider.transition();
+
+    })   
+});
+
+</script>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+  #div1{
+	  width:500px;
+	  height:30px;
+	  position:relative;
+	  background:#999}
+	 #div2{
+		 width:20px;
+		 height:30px;
+		 background:#F00;
+		 position:absolute} 
+#div3{
+	width:200px;
+	height:200px;
+	border:1px solid red;
+	position:relative;
+	overflow:hidden;
+	}
+#div4{
+	position:absolute}	
+</style>
+<script>
+
+  window.onload = function()
+  {
+	  drag("div2");
+  }
+  function drag(id)
+{
+var odiv =document.getElementById(id);
+odiv.onmousedown = function(ev)
+{
+	var oEvent = ev||event;
+	var disX = oEvent.clientX - odiv.offsetLeft;
+	//var disY = oEvent.clientY - odiv.offsetTop;
+   document.onmousemove = function(ev)
+     {
+	  var oEvent = ev||event;
+	  var l=oEvent.clientX-disX;
+	  var odiv1 = document.getElementById("div1");
+	  var odiv3 = document.getElementById("div3");
+	  var odiv4 = document.getElementById("div4");
+	  if(l<0)
+	  {
+		  l=0;
+	  }
+	  else if(l>odiv1.offsetWidth-odiv.offsetWidth)
+	  {
+	      l=odiv1.offsetWidth-odiv.offsetWidth;
+	  }
+	  var scall = l/(odiv1.offsetWidth-odiv.offsetWidth);
+	  
+	   odiv.style.left =l +'px';
+	   odiv4.style.top=-(odiv4.offsetHeight-odiv3.offsetHeight)*scall+'px';
+     }
+  };
+  document.onmouseup = function()
+   {
+	  document.onmousemove = null;
+	  document.onmouseup = null;
+    } 
+
+}
+
+</script>
+</head>
+
+<body>
+ <div id="div1">
+   <div id="div2"></div>
+ 
+ </div>
+ <div id="div3">
+ 
+  <div id="div4">
+     Stephen Huang: 我了解以下信息，遵守相关规定，申请报名：我的注册信息真实，特训营课程宽进严出，每天学3节新课程，连续7天不学新课程，取消学习资格，先从java开始学起，不能挑课，按照老师计划进行。每天坚持一小时，半年小白变高手，这绝对不是广告词，而是我们的实际行动。 21点59分 13-09-22
+
+ 高仁: 我了解以下信息，遵守相关规定，申请报名：我的注册信息真实，特训营课程宽进严出，每天学3节新课程，连续7天不学新课程，取消学习资格，先从java开始学起，不能挑课，按照老师计划进行。每天坚持一小时，半年小白变高手，这绝对不是广告词，而是我们的实际行动。 21点07分 13-09-22
+
+ overnight: 我了解以下信息，遵守相关规定，申请报名：我的注册信息真实，特训营课程宽进严出，每天学3节新课程，连续7天不学新课程，取消学习资格，先从java开始学起，不能挑课，按照老师计划进行。每天坚持一小时，半年小白变高手，这绝对不是广告词，而是我们的实际行动。 22点01分 13-09-22
+
+ afu110: 我了解以下信息，遵守相关规定，申请报名：我的注册信息真实，特训营课程宽进严出，每天学3节新课程，连续7天不学新课程，取消学习资格，先从java开始学起，不能挑课，按照老师计划进行。每天坚持一小时，半年小白变高手，这绝对不是广告词，而是我们的实际行动。 22点30分 13-09-22
+
+ will: 我了解以下信息，遵守相关规定，申请报名：我的注册信息真实
+  
+  </div>
+ 
+ </div>
+</body>
+</html>

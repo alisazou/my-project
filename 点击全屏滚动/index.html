@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>一屏滚动效果</title>
+	<script type="text/javascript"></script>
+	<style type="text/css">
+	body,html{margin:0;padding: 0;}
+    .btn{ position: fixed; bottom: 0; width: 100px; height: 50px; left: 50%; margin-left: -25px; line-height: 50px; background: red; text-align: center}
+    .btn a{ display:inline-block; width: 50px; height: 30px; vertical-align: middle; ; background: url(l.png); }
+     .btn a.on{ display:inline-block; width: 50px; height: 30px; vertical-align: middle; ; background: url(up.png); }
+    .box{ height:979px; }
+	.box:nth-child(1){ background: red; }
+	.box:nth-child(2){ background: blue; }
+	.box:nth-child(3){ background: black; }
+
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+
+	<div class="btn">
+		<a href="javascript:;"></a>
+	</div>
+</body>
+	<script type="text/javascript" src='../jquery-1.11.1.min.js'></script>
+	<script type="text/javascript">
+	var nCurPos = $(window).scrollTop(),
+		 nColLen = $(".box").length,
+		 aColPos =[],
+		 sNextColPos,
+		nTime=600;
+	$(function(){
+		
+		
+		
+	
+		for(var i=0;i<nColLen;i++){ 
+				 aColPos[i] = $(".box").eq(i).offset().top; //获取所有栏目的垂直位置
+					// console.log( $(".box").eq(1).offset().top);
+			}
+
+         $('.btn').on('click',function(){
+         	 
+                   scrollAni(-1);
+         })
+
+	})
+	function showBackTop(){ 
+		$(".btn a").addClass("on").one("click",function(){
+			$("html,body").animate({"scrollTop":0},nTime,function(){ $(".btn a").removeClass("on"); });	 
+		})
+	}
+	
+
+	function scrollAni(dir){
+		if( $("html,body").not(":animated")) { //如果屏幕未滚动
+		
+			nCurPos = $(window).scrollTop();//屏幕滚动距离
+			for(var i=0;i<nColLen;i++){
+				if ( nCurPos < aColPos[i] ) { //如果下个栏目的上边缘在浏览器上边缘的下方，则滚动至这个栏目
+					//alert("当前位置" + nCurPos+ "  当前是第"+i+"个栏目，他距离顶部位置"+$( aCol ).eq(i).offset().top)
+					if (dir<0) { sNextColPos = aColPos[i]; }
+					else { sNextColPos = aColPos[i-1] }
+					$("html,body").animate({"scrollTop":sNextColPos},nTime);
+					break;
+				}
+				
+				else if( nCurPos == aColPos[i] ) {
+					if (dir<0 ) { 
+						sNextColPos = aColPos[i+1];
+						if( i!=nColLen-1 ){ $("html,body").animate({"scrollTop":sNextColPos},nTime,function(){ //如果不是最后一个栏目
+							if( i==nColLen-2 ) { showBackTop();  }	
+						}) } 
+						else { 
+							
+						} //如果是最后一个栏目
+					}
+					else {
+						if( i!=0 ) { //如果不是第一个栏目
+							sNextColPos = aColPos[i-1]; 
+							$("html,body").animate({"scrollTop":sNextColPos},nTime,function(){
+								if( i==nColLen-1 ) { $(".jZtNext").removeClass("zt_next_back").unbind().bind("click", function(){ scrollAni(-1) }) }	
+							}); 
+						}
+						
+					}
+					break;
+				}
+			}
+			if( nCurPos > aColPos[nColLen-1] && dir>0 )  { $("html,body").animate({"scrollTop":aColPos[nColLen-1]},nTime);  }
+			
+		}
+	}
+	
+
+
+</script></html>

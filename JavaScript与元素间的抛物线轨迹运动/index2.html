@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #product{width: 105px;height: 30px;border: 1px solid #79C1F3;background-color: #EBF5FF;display: none;z-index: 1}
+    
+#shop{width: 300px;height: 300px;border: 1px solid red;margin-top: 300px;margin-left: 800px;font-weight: bold;color: red;z-index: 6;position: relative;}
+}
+    </style>
+</head>
+<body>
+    <input id="Button1" type="button" value="button" />
+    <div id="product"></div>
+    <div  id="shop">
+        g
+    </div>
+
+</body>
+    <script type="text/javascript" src="http://cache.500boss.com/public/js/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+    
+$(function() {
+    var numberItem = 0;
+        $("#Button1").click(function() {
+            var shopOffset = $("#shop").offset();/*获取距离顶部与左边的距离*/
+            var cloneDiv = $("#product").clone();/*克隆副本，将其移动到目标地点*/
+            var proOffset = $("#product").offset();
+            cloneDiv.css({ "position": "absolute", "top": proOffset.top, "left": proOffset.left });
+            $("#product").parent().append(cloneDiv);
+             cloneDiv.css({"display":"block"});
+            cloneDiv.animate({
+                left: shopOffset.left,
+                top: shopOffset.top
+            },"slow");
+             $("#shop").html(++numberItem) ;
+                
+        });
+    });
+
+</script>
+</html>

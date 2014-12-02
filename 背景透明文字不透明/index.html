@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{color: #fff;text-align: center;}
+	p{font-size: 30px;color: #000;font-weight: bold}
+	.box{position: relative;}
+	.text{width: 200px;height: 200px;background: blue}
+.text1{
+	width: 200px;height: 200px;margin-top: -70px;margin-left: 40px;z-index: 100;
+        /*已opacity方式的透明，会让子元素也一起透明*/
+  /*
+        background-color: red;filter:alpha(opacity=50);opacity: 0.5;}
+    	.inner{background-color: blue;color: #000;}*/
+        background-color: #ff0000;/*为了保险起见，我们还可以增加一个fallback（后备）颜色，也就是不透明时的颜色，如果某个浏览器不支持透明，*/
+          background: transparent;/**解决ie不正常的表现*/
+         filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7FFF0000', endColorstr='#7FFF0000');
+        background:rgba(255,0,0,0.5);
+    }
+:root .text1{
+  filter:none;/*解决ie9颜色不一致问题*/
+}
+    .inner{
+    	width: 50px;height: 50px;
+        /*省略无关样式*/
+        background-color: yellow;
+        color: #000;
+    }
+    .box1{margin-top: 20px;position: relative; }
+    .box1 .text{width: 200px;height: 200px;background: blue}
+    .box1 .text1{width: 200px;height: 200px;margin-top: -70px;margin-left: 40px;z-index: 100;background: red;filter:alpha(opacity=50);opacity: 0.5;}
+    .box1 .inner{width: 50px;height: 50px;/*省略无关样式*/background-color: yellow;color: #000;}
+    .box2{margin-top: 20px;position: relative; }
+    .box2 .text{width: 200px;height: 200px;background: blue}
+    .box2 .text1{width: 200px;height: 200px;margin-top: -70px;margin-left: 40px;z-index: 100;background: red;filter:alpha(opacity=50);opacity: 0.5;}
+    .box2 .inner{width: 50px;height: 50px;/*省略无关样式*/background-color: yellow;color: #000;margin-top: -180px;margin-left: 40px;}
+   
+	</style>
+</head>
+<body>
+	<p>测试元素的透明度问题</p>
+	<div class="box">
+		<div class="text">11</div>
+		<div class="text1">
+			22
+			<div class="inner">33</div>
+		</div>
+	</div>
+
+	<div class="box1">
+		<div class="text">11</div>
+		<div class="text1">
+			22
+			<div class="inner">33</div>
+		</div>
+	</div>
+	<div class="box2">
+		<div class="text">11</div>
+		<div class="text1">22</div>
+		<div class="inner">33</div>
+	</div>
+</body>
+</html>

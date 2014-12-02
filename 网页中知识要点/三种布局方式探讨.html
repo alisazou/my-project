@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	
+   .left,.right{position: absolute;top:0;width: 300px;height: 10%;}
+   .left{left: 0;background: red;}
+   .right{right: 0;background: blue;}
+   .box{margin-top: 500px;color: #000}
+   .clear{ zoom:1; }
+.clear:after{ content:''; clear:both; display:block; height:0; visibility:hidden; }
+   .middle{margin:0 300px;height: 10%;background: #000;}
+   .box .left,.box .right{width: 300px;height: 30%;background: red;}
+    .box .left{float: left;}
+    .box .right{float: right;}
+    .box .middle{margin: 0 300px;height: 30%;background: #000}
+
+   /*绝对定位缺点：浏览器缩小，布局层重叠情况出现*/
+
+	</style>
+</head>
+<body>
+
+	<!-- <div class="left"></div>
+	<div class="middle">q</div>
+	<div class="right"></div> -->
+	<div class="box clear">
+		<div class="left">d</div>
+		<div class="right">d</div>
+		<div class="middle">w</div>
+	</div>
+</body>
+</html>

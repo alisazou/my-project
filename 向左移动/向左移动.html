@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{height: 10000px;margin: 0;padding:0;}
+ .text{width: 100px;height: 102px;background: red;position:relative;}
+ .selectorClass2{width: 200px;height: 200px;background: red;position: relative;left: 400px;top: 300px;}
+ .selectorClass3{width: 200px;height: 200px;background: red;position: relative;left: 500px;top: 400px;}
+ .demo1{width: 50px;height: 50px;background: blue;position: absolute;left: -10px;z-index: 999}
+ .demo2{width: 50px;height: 50px;background: blue;position: absolute;left: -10px;z-index: 999}
+ .scroll_list {
+position: relative;
+overflow: hidden;
+margin-left: 160px;
+height: 55px;
+width: 800px;
+line-height: 55px;
+font-family: "microsoft yahei";
+font-size: 14px;
+color: #e1a1ae;
+}
+.scroll_list dl {
+width: 1000%;
+height: 55px;
+float: left;
+}
+.scroll_list dt, .scroll_list dd {
+float: left;
+}
+.scroll_list span {
+padding-right: 20px;
+}
+.scroll_list em {
+color: #ffe400;
+}
+	</style>
+</head>
+<body>
+	<div class="text" id="qqonline"></div>
+	<div class="selectorClass2">
+		测试hover
+		<div class="demo1"></div>
+	</div>
+	<div id="scroll_list" class="scroll_list mod_block" listnum="8" did="431">
+		<dl>
+			<dt>
+				<span>
+					a****获得 <em>0元</em>
+					红包
+				</span>
+				<span>
+					w****获得 <em>0元</em>
+					红包
+				</span>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					心****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					m****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+			</dt>
+			<dd>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					w****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					心****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					m****获得
+					<em>0元</em>
+					红包
+				</span>
+				<span>
+					a****获得
+					<em>0元</em>
+					红包
+				</span>
+			</dd>
+		</dl>
+	</div>
+</body>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+
+	<script type="text/javascript">
+	
+$(function(){ 
+	var timer;
+	$(window).scroll(function() {
+		  clearInterval(timer);  
+    // var initoffset = $('#qqonline').offset();
+    var currenttop = $(window).scrollTop();
+
+    var top1 = (currenttop+200)+'px';
+  
+     timer=setInterval(function(){  
+            $("#qqonline").animate({
+    	  		top: top1 
+			}, "show");
+        },500)
+     
+     console.log(top1);
+
+});
+	
+
+
+}); 
+
+</script>
+<script type="text/javascript">
+  var Marquee = function(id){   
+    var container = document.getElementById(id),
+    original = container.getElementsByTagName("dt")[0],
+    clone = container.getElementsByTagName("dd")[0],
+    speed = arguments[1] || 30;
+    clone.innerHTML=original.innerHTML;
+    var rolling = function(){
+      if(container.scrollLeft == clone.offsetLeft){
+        container.scrollLeft = 0;
+      }else{
+        container.scrollLeft++;
+      }
+    }
+    var timer = setInterval(rolling,speed)//设置定时器
+    container.onmouseover=function() {clearInterval(timer)}//鼠标移到marquee上时，清除定时器，停止滚动
+    container.onmouseout=function() {timer=setInterval(rolling,speed)}//鼠标移开时重设定时器
+  }
+  window.onload = function(){
+    Marquee("scroll_list");
+  }
+  
+</script>
+</html>

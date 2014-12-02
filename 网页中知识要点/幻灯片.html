@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>幻灯特效</title>
+	<style type="text/css">
+	body,ul,li{ margin: 0; padding: 0}
+	ul{ list-style: none; }
+.picScroll-left { overflow: hidden; position: relative; border: 1px solid #ccc; }
+.picScroll-left .hd { overflow: hidden; height: 30px; background: #f4f4f4; padding: 0 10px; }
+.picScroll-left .hd .prev, .picScroll-left .hd .next { display: block; width: 5px; height: 9px; float: right; margin-right: 5px; margin-top: 10px; overflow: hidden; cursor: pointer; background: url("images/arrow.png") 0 0 no-repeat; }
+.picScroll-left .hd .next { background-position: 0 -50px; }
+.picScroll-left .hd .nextStop {background-position: -60px -50px;}
+.picScroll-left .hd .prevStop {background-position: -60px 0;}
+
+.picScroll-left .hd ul { float: right; overflow: hidden; zoom: 1; margin-top: 10px; zoom: 1; }
+.picScroll-left .hd ul li { float: left; width: 9px; height: 9px; overflow: hidden; margin-right: 5px; text-indent: -999px; cursor: pointer; background: url("images/icoCircle.gif") 0 -9px no-repeat; }
+.picScroll-left .hd ul li.on { background-position: 0 0; }
+.picScroll-left .bd { padding: 10px; }
+.tempWrap{ overflow: hidden; position: relative; width: 426px; }/**/
+.picList{  left: 0px; position: relative; overflow: hidden; }/**/
+.picScroll-left .bd ul li { float: left; margin: 0 8px; width: 126px; _display: inline; overflow: hidden; text-align: center; }
+.picScroll-left .bd ul li .pic { text-align: center; }
+.picScroll-left .bd ul li .pic a:hover img { border-color: #999; }
+.picScroll-left .bd ul li .pic img { width: 120px; height: 90px; display: block; padding: 2px; border: 1px solid #ccc; }
+
+	</style>
+</head>
+<body>
+	<div class="picScroll-left">
+		<div class="hd">
+			<a class="next"></a>
+			<ul>
+				<li class="on">1</li>
+				<li class="">2</li>
+				<li class="">3</li>
+				<li class="">4</li>
+			</ul>
+			<a class="prev"></a>
+			<span class="pageState">
+				<span>1</span>
+				/4
+			</span>
+		</div>
+		<div class="bd">
+			<div class="tempWrap">
+				<ul class="picList">
+					<li>
+						<div class="pic">
+							<a href="" target="_blank">
+								<img src="images/pic1.jpg"></a>
+						</div>
+						<div class="title">
+							<a href="" target="_blank">效果图1</a>
+						</div>
+					</li>
+					<li>
+						<div class="pic">
+							<a href="" target="_blank">
+								<img src="images/pic2.jpg"></a>
+						</div>
+						<div class="title">
+							<a href="" target="_blank">效果图2</a>
+						</div>
+					</li>
+					<li>
+						<div class="pic">
+							<a href="" target="_blank">
+								<img src="images/pic3.jpg"></a>
+						</div>
+						<div class="title">
+							<a href="" target="_blank">效果图3</a>
+						</div>
+					</li>
+					<li>
+						<div class="pic">
+							<a href="" target="_blank">
+								<img src="images/pic4.jpg"></a>
+						</div>
+						<div class="title">
+							<a href="" target="_blank">效果图4</a>
+						</div>
+					</li>
+					<li>
+						<div class="pic">
+							<a href="" target="_blank">
+								<img src="images/pic5.jpg"></a>
+						</div>
+						<div class="title">
+							<a href="" target="_blank">效果图5</a>
+						</div>
+					</li>
+					<li>
+						<div class="pic">
+							<a href="" target="_blank">
+								<img src="images/pic6.jpg"></a>
+						</div>
+						<div class="title">
+							<a href="" target="_blank">效果图6</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+	
+//滚动横幅
+		$(function(){
+				var aList = $('.picList'),
+				nListLen = aList.children("li").length,
+				nListWid=(aList.children("li").eq(0).width()+16),
+				nMoveWidth = 142,
+				nAniLast=300,
+				i=0;aDot=[];
+				aDot = $(".hd ul").children();
+				var aList_w = (nListLen*nListWid)+'px';
+				// c<on></on>sole.log(aList_w);
+			      aList.width(aList_w);
+			      fnSlide = function(cur){
+                        if(cur>=0){i=cur;}
+                        // else{i==nListLen-1?i=0:i++}
+                        	aList.animate({'margin-left':-(nMoveWidth*i)+'px'},nAniLast,function(){
+                                    fnMoveDot(i); 
+                        	})
+			      }
+
+                    fnMoveDot = function(cur){ //圆点动作
+                aDot.eq(cur).addClass("on").siblings().removeClass("on");
+             };
+
+		          aDot.each(function(index){
+		             $(this).click(function(){
+		                fnSlide(index);
+		                fnMoveDot(index);
+		             });
+		         });
+
+				 $(".prev").click(function(){
+		             i==0 ? i=nListLen-3 : i--;
+		             if(i==0)
+		             	 $(this).addClass("prevStop");
+		             fnSlide(i);
+		             //fnMoveDot(i);
+		         });
+		         $(".next").click(function(){
+
+		             i==nListLen-3 ? i=0 : i++;
+		               var next_hidden= nListLen-3;
+		               	 // console.log(next_hidden);
+                          if(i==(nListLen-3)){
+                          	  
+                          	  $(this).addClass("nextStop");
+                          }
+		             fnSlide(i);
+		             // fnMoveDot(i);
+		         });
+		})
+    
+
+</script>
+</html>
