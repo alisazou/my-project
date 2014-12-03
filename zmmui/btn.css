@@ -40,9 +40,9 @@
                         -webkit-repeating-radial-gradient( hsla(20,100%, 50%,0) 20%, hsla(20,100%,50%,.4) 80%,  hsla(50,100%,70%, 1) 120px); background-image:        -moz-repeating-radial-gradient( hsla(50,100%,100%,1) 0px, hsla(50,100%,90%, 1) 10px, hsla(50,100%,70%,.2)  12px, hsla(50,100%,70%,0) 130px),
                            -moz-repeating-radial-gradient( hsla(20,100%, 50%,0) 20%, hsla(20,100%,50%,.4) 80%,  hsla(50,100%,70%, 1) 120px); background-image:         -ms-repeating-radial-gradient( hsla(50,100%,100%,1) 0px, hsla(50,100%,90%, 1) 10px, hsla(50,100%,70%,.2)  12px, hsla(50,100%,70%,0) 130px),
                             -ms-repeating-radial-gradient( hsla(20,100%, 50%,0) 20%, hsla(20,100%,50%,.4) 80%,  hsla(50,100%,70%, 1) 120px); background-image:          -o-repeating-radial-gradient( hsla(50,100%,100%,1) 0px, hsla(50,100%,90%, 1) 10px, hsla(50,100%,70%,.2)  12px, hsla(50,100%,70%,0) 130px),
-                             -o-repeating-radial-gradient( hsla(20,100%, 50%,0) 20%, hsla(20,100%,50%,.4) 80%,  hsla(50,100%,70%, 1) 120px); background-image:             repeating-radial-gradient( hsla(50,100%,100%,1) 0px, hsla(50,100%,90%, 1) 10px, hsla(50,100%,70%,.2)  12px, hsla(50,100%,70%,0) 130px),
+                    -o-repeating-radial-gradient( hsla(20,100%, 50%,0) 20%, hsla(20,100%,50%,.4) 80%,  hsla(50,100%,70%, 1) 120px); background-image:             repeating-radial-gradient( hsla(50,100%,100%,1) 0px, hsla(50,100%,90%, 1) 10px, hsla(50,100%,70%,.2)  12px, hsla(50,100%,70%,0) 130px),
  
-                                repeating-radial-gradient( hsla(20,100%, 50%,0) 20%, hsla(20,100%,50%,.4) 80%,  hsla(50,100%,70%, 1) 120px); }
+                         repeating-radial-gradient( hsla(20,100%, 50%,0) 20%, hsla(20,100%,50%,.4) 80%,  hsla(50,100%,70%, 1) 120px); }
 .load1,.load4,.load8{ background-color: #9ACD4B; width: 200px; height: 200px; overflow: hidden;display: inline-block; }
 .load1 .loader,
 .load1 .loader:before,
